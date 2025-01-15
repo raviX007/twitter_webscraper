@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Trending Topics</title>
+    <script>
+        async function runScript() {
+            const response = await fetch("/run_script", { method: "POST" });
+            const result = await response.json();
+            
+            const resultDiv = document.getElementById("results");
+            resultDiv.innerHTML = "";
+
+            if (result.error) {
+                resultDiv.innerHTML = `<p>Error: ${result.error}</p>`;
+            } else {
+                resultDiv.innerHTML = `
+                    <h3>These are the most happening topics as on ${result.timestamp}</h3>
+                    <ul>
+                        ${result.trends.map(trend => `<li>${trend}</li>`).join("")}
+                    </ul>
+                    <p>The IP address used for this query was ${result.ip_address}.</p>
+                    <h4>JSON extract:</h4>
+                    <pre>${JSON.stringify(result.trends, null, 2)}</pre>
+                    <a href="#" onclick="runScript()" style="color: #3498db; text-decoration: none;">Click here to run the query again.</a>
+                `;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Twitter Trending Topics</h1>
+    <a href="#" onclick="runScript()" style="color: #3498db; text-decoration: none;">Click here to run the script.</a>
+    <div id="results"></div>
+    <!-- <a href="#" onclick="runScript()" style="color: #3498db; text-decoration: none;">Click here to run the query again.</a> -->
+
+</body>
+</html>
