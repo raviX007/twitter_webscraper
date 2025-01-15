@@ -114,7 +114,11 @@ If you encounter a 403 error:
 
 ## Recording and Screenshot of the working Application
 
+### Recording:
+
 https://drive.google.com/file/d/1zGTuPMb43ogBIR187OcLGDNrt65_rwiC/view?usp=sharing
+
+### Screenshot:
 
 ![image](https://github.com/user-attachments/assets/e682739e-f32c-4633-9481-ad1ec157686c)
 
