@@ -112,6 +112,9 @@ If you encounter a 403 error:
 4. Add MongoDB credentials to `.env` file
 5. Ensure your IP address is whitelisted in MongoDB Atlas
 
-## Recording of the working Application
+## Recording and Screenshot of the working Application
 
 https://drive.google.com/file/d/1zGTuPMb43ogBIR187OcLGDNrt65_rwiC/view?usp=sharing
+
+![image](https://github.com/user-attachments/assets/e682739e-f32c-4633-9481-ad1ec157686c)
+
