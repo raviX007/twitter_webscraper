@@ -26,7 +26,7 @@ A Flask-based web application that automatically scrapes trending topics from Tw
 
 ```bash
 git clone <repository-url>
-cd twitter-trends-scraper
+cd twitter_webscraper
 ```
 
 2. Install required packages:
