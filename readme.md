@@ -114,4 +114,5 @@ If you encounter a 403 error:
 
 ## Recording of the working Application
 
-[text](<../../Desktop/Screen Recording 2025-01-15 at 7.25.41 PM.mov>)
+https://drive.google.com/file/d/1mSVjJmWfTHczhlIa4uHjw6vjugcNZe8q/view?usp=sharing
+
