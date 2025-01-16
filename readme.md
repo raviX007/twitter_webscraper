@@ -1,237 +1,97 @@
-# Twitter Trends Scraper
+# Twitter Trends Tracker
 
-A Flask-based web application that automatically scrapes trending topics from Twitter/X and stores them in MongoDB. The application uses Selenium for web scraping and provides a simple web interface to view the results.
+A Streamlit-based application that scrapes and displays real-time trending topics from Twitter. The app features a user-friendly interface, customizable trend counts, and optional MongoDB integration for data persistence.
 
-## Features
+## 🌟 Features
 
-- Automated login to Twitter/X
-- Handles Twitter security challenges
-- Scrapes top 15 trending topics
-- Stores results in MongoDB with timestamp and IP address
-- Web interface to view results
-- Cross-platform compatibility
-- Automated browser opening
-- CORS support for API access
+- Real-time Twitter trends scraping
+- Customizable number of trending topics (5-15)
+- Beautiful card-based UI for trend display
+- Progress tracking with visual feedback
+- Optional MongoDB integration for data storage
+- Auto-refresh capability
+- Visible browser automation option
 
-## Prerequisites
+## 🛠️ Prerequisites
 
 - Python 3.7+
-- Google Chrome browser
-- MongoDB Atlas account
-- Twitter/X account
+- Chrome browser installed
+- Twitter account credentials
+- MongoDB connection details (optional)
 
-## Installation
+## 📦 Installation
 
 1. Clone the repository:
 
 ```bash
 git clone <repository-url>
-cd twitter-trends-scraper
+cd streamlit
 ```
 
-2. Install required packages:
+2. Create a virtual environment (optional but recommended):
 
 ```bash
-pip install -r requirements.txt
+python -m venv venv
+source venv/bin/activate  # On Windows, use: venv\Scripts\activate
 ```
 
-3. Create a `.env` file in the project root with the following variables:
-
-```env
-TWITTER_USERNAME=your_twitter_username
-TWITTER_PASSWORD=your_twitter_password
-TWITTER_EMAIL=your_twitter_email
-MONGO_PASSWORD=your_mongodb_password
-MONGO_USER=your_mongodb_username
-MONGO_CLUSTER=your_cluster_url
-```
-
-## Project Structure
-
-```
-twitter-trends-scraper/
-├── app.py              # Main application file
-├── requirements.txt    # Python dependencies
-├── .env               # Environment variables
-├── templates/         # HTML templates
-│   └── index.html    # Main page template
-└── README.md         # Project documentation
-```
-
-## Dependencies
-
-- Flask
-- Selenium
-- pymongo
-- python-dotenv
-- requests
-- webdriver-manager
-
-## Usage
-
-1. Start the application:
+3. Install required packages:
 
 ```bash
-python app.py
+pip install streamlit selenium webdriver-manager pymongo python-dotenv requests
 ```
 
-2. The application will automatically open your default web browser to `http://localhost:5000`
+## 🚀 Usage
 
-3. Click the "Run Script" link to start scraping trending topics
-
-4. Results will be displayed on the web interface and stored in MongoDB
-
-## Error Handling
-
-The application includes several error handling mechanisms:
-
-- Automatic retry for failed scraping attempts
-- Security challenge handling
-- Cross-platform browser compatibility
-- Multiple fallback URLs
-- Comprehensive error logging
-
-## Troubleshooting
-
-If you encounter a 403 error:
-
-1. Check your firewall settings
-2. Try running with administrator privileges
-3. Verify port 5000 is available
-4. Clear browser cache
-5. Try alternative URLs:
-   - http://localhost:5000
-   - http://127.0.0.1:5000
-   - http://0.0.0.0:5000
-
-## MongoDB Setup
-
-1. Create a MongoDB Atlas account
-2. Create a new cluster
-3. Get your connection string
-4. Add MongoDB credentials to `.env` file
-5. Ensure your IP address is whitelisted in MongoDB Atlas
-
-## Recording and Screenshot of the working Application
-
-https://drive.google.com/file/d/1zGTuPMb43ogBIR187OcLGDNrt65_rwiC/view?usp=sharing
-
-# Twitter Trends Scraper
-
-A Flask-based web application that automatically scrapes trending topics from Twitter/X and stores them in MongoDB. The application uses Selenium for web scraping and provides a simple web interface to view the results.
-
-## Features
-
-- Automated login to Twitter/X
-- Handles Twitter security challenges
-- Scrapes top 15 trending topics
-- Stores results in MongoDB with timestamp and IP address
-- Web interface to view results
-- Cross-platform compatibility
-- Automated browser opening
-- CORS support for API access
-
-## Prerequisites
-
-- Python 3.7+
-- Google Chrome browser
-- MongoDB Atlas account
-- Twitter/X account
-
-## Installation
-
-1. Clone the repository:
+1. Run the Streamlit app:
 
 ```bash
-git clone <repository-url>
-cd twitter-trends-scraper
+streamlit run app.py
 ```
 
-2. Install required packages:
+2. In the sidebar, enter your:
 
-```bash
-pip install -r requirements.txt
-```
+   - Twitter username
+   - Twitter email
+   - Twitter password
+   - MongoDB credentials (optional)
 
-3. Create a `.env` file in the project root with the following variables:
+3. Configure your preferences:
 
-```env
-TWITTER_USERNAME=your_twitter_username
-TWITTER_PASSWORD=your_twitter_password
-TWITTER_EMAIL=your_twitter_email
-MONGO_PASSWORD=your_mongodb_password
-MONGO_USER=your_mongodb_username
-MONGO_CLUSTER=your_cluster_url
-```
+   - Number of trending topics to display
+   - Browser visibility option
+   - Auto-refresh settings
 
-## Project Structure
+4. Click "Fetch Trending Topics" to start scraping
 
-```
-twitter-trends-scraper/
-├── app.py              # Main application file
-├── requirements.txt    # Python dependencies
-├── .env               # Environment variables
-├── templates/         # HTML templates
-│   └── index.html    # Main page template
-└── README.md         # Project documentation
-```
+## 🔧 Configuration Options
 
-## Dependencies
+### Twitter Settings
 
-- Flask
-- Selenium
-- pymongo
-- python-dotenv
-- requests
-- webdriver-manager
+- Username: Your Twitter/X account username
+- Email: Email associated with your Twitter account
+- Password: Your Twitter account password
 
-## Usage
+### Display Settings
 
-1. Start the application:
+- Number of trends: Choose between 5-15 trending topics
+- Show Browser: Toggle browser window visibility during scraping
+- Auto-refresh: Enable automatic trend updates
 
-```bash
-python app.py
-```
+### MongoDB Settings (Optional)
 
-2. The application will automatically open your default web browser to `http://localhost:5000`
+- Username: MongoDB database username
+- Password: MongoDB database password
+- Cluster URL: Your MongoDB cluster URL
 
-3. Click the "Run Script" link to start scraping trending topics
+## 🗃️ Data Storage
 
-4. Results will be displayed on the web interface and stored in MongoDB
+If MongoDB credentials are provided, the app stores:
 
-## Error Handling
+- Timestamp of data collection
+- IP address of the collector
+- List of trending topics
 
-The application includes several error handling mechanisms:
+## Screenshot of the working Application
 
-- Automatic retry for failed scraping attempts
-- Security challenge handling
-- Cross-platform browser compatibility
-- Multiple fallback URLs
-- Comprehensive error logging
-
-## Troubleshooting
-
-If you encounter a 403 error:
-
-1. Check your firewall settings
-2. Try running with administrator privileges
-3. Verify port 5000 is available
-4. Clear browser cache
-5. Try alternative URLs:
-   - http://localhost:5000
-   - http://127.0.0.1:5000
-   - http://0.0.0.0:5000
-
-## MongoDB Setup
-
-1. Create a MongoDB Atlas account
-2. Create a new cluster
-3. Get your connection string
-4. Add MongoDB credentials to `.env` file
-5. Ensure your IP address is whitelisted in MongoDB Atlas
-
-## Recording of the working Application
-
-https://drive.google.com/file/d/1zGTuPMb43ogBIR187OcLGDNrt65_rwiC/view?usp=sharing
-
-![alt text](image-1.png)
+![alt text](image-2.png)

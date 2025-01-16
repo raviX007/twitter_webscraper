@@ -3,3 +3,6 @@ selenium
 webdriver-manager
 pymongo
 flask
+bs4
+cachetools
+streamlit
